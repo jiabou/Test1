@@ -41,6 +41,9 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
+      
+    - name: Build code
+      run: ./gradlew build
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
