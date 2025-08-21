@@ -4,6 +4,7 @@ plugins {
     id ("kotlin-android")
     id ("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
+    id("org.jetbrains.kotlin.kapt" version "1.9.0")
 }
 
 android {
