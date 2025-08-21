@@ -4,6 +4,9 @@ plugins {
     id ("kotlin-android")
     id ("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android" version "1.9.24")
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -70,4 +73,5 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:2.45")
     implementation("androidx.room:room-runtime:2.5.0")
     kapt("androidx.room:room-compiler:2.5.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.24")
 }
