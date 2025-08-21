@@ -4,7 +4,6 @@ plugins {
     id ("kotlin-android")
     id ("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
-    id("org.jetbrains.kotlin.kapt:1.9.0")
 }
 
 android {
@@ -69,7 +68,6 @@ dependencies {
     kapt("com.github.bumptech.glide:compiler:4.12.0")
     implementation ("com.google.dagger:dagger:2.45")
     kapt("com.google.dagger:dagger-compiler:2.45")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
     implementation("androidx.room:room-runtime:2.5.0")
     kapt("androidx.room:room-compiler:2.5.0")
 }
