@@ -1,11 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id ("kotlin-android")
-    id ("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
 }
 
