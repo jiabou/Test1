@@ -67,7 +67,7 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Build with Gradle
-      run: ./gradlew clean build
+      run: ./gradlew build
       
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
