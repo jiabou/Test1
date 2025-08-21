@@ -73,15 +73,6 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <include
-            android:id="@+id/browse_services_layout"
-            layout="@layout/fragment_browse_services"
-            android:visibility="gone"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/nav_view"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
-
-        <include
             android:id="@+id/chat_layout"
             layout="@layout/fragment_chat"
             android:visibility="gone"
