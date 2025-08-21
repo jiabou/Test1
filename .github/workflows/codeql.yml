@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17' # 👈 set this to match your Android Studio JDK
+          java-version: '11' # 👈 set this to match your Android Studio JDK
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
@@ -43,10 +43,10 @@ jobs:
           build-mode: ${{ matrix.build-mode }}
 
       - if: matrix.build-mode == 'manual'
-        name: Build with Gradle   # 👈 NEW manual build step
+        name: Build with Gradle
         run: |
           chmod +x gradlew
-          ./gradlew clean build --stacktrace
+          ./gradlew build --stacktrace --no-daemon
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
