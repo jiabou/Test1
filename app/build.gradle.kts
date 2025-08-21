@@ -66,5 +66,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.12.0")
     kapt("com.github.bumptech.glide:compiler:4.12.0")
     implementation ("com.google.dagger:dagger:2.45")
-    kapt ("com.google.dagger:dagger-compiler:2.45")
+    kapt("com.google.dagger:dagger-compiler:2.45")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+    kapt("androidx.room:room-compiler:2.5.0")
 }
