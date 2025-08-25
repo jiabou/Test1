@@ -69,6 +69,35 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew clean build --stacktrace
       
+    # Run unit tests (JVM, fast)
+    - name: Run Unit Tests
+      run: ./gradlew test
+
+    # Setup Android emulator for integration tests
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v2
+      with:
+        api-level: 33       # choose your target SDK
+        target: google_apis # system image
+        arch: x86_64
+        profile: Pixel_7
+
+    - name: Start emulator
+      run: |
+        nohup $ANDROID_HOME/emulator/emulator -avd Pixel_7 -no-window -no-audio -no-snapshot-load &
+        adb wait-for-device
+        adb shell input keyevent 82
+
+    # Run instrumented / integration tests
+    - name: Run Integration Tests
+      run: ./gradlew connectedAndroidTest
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+        build-mode: ${{ matrix.build-mode }}
+        
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
